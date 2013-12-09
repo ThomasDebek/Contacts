@@ -26,3 +26,37 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+// adding comments from the console
+p = Person.new
+p.name = “Anna“
+p.surname= “Jasna“
+p.id?  			-spr.jakie ma id
+p.new_record?		- spr.czy nowy rekord
+p.save
+
+ dodajmy  komentarz do osoby
+p.comments.create(body: ‘Ania ma kota‘)
+p.comments.create(body: ‘Pożyczyla plyte CD‘)
+zobaczmy w komentarzach jak to wygląda http://0.0.0.0:3000/comments/
+
+
+p.commetns.map { |c| c..body}  lub tak  puts p.comments.map { |c| c }
+c  = Comment.create		-tworzymy pusty komentarz
+c = Comment.destroy 		-mozemy go usunąc
+
+jak dostac sie do osoby? A wiem ze ma np.id 5
+p = Person.find(5)
+p.to_s
+p = Person.all.size
+p = Person.count
+puts Person.all
+
+cos innego, mamy Anie i zmienmy jej imie na Kasia
+p = Person.find(5)
+p.name
+p.name = “Kasia“ 		-zmieniamy imie
+p.to_s
+lub imie mozemy zmienic inaczej
+p.update_attribute(:name,  ‘Joanna‘)
+p.to_s
