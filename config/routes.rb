@@ -1,5 +1,7 @@
 Contacts::Application.routes.draw do
 
+  resources :comments
+
   resources :people
 
   root to: 'hello#world'
