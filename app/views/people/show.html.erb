@@ -25,5 +25,15 @@
   <%= @person.address %>
 </p>
 
+<p>
+  <strong>Comments:</strong>
+<ol>
+  <% @person.comments.each do |comment| %>
+      <li><%= comment %> </li>
+   <% end %>
+</ol>
+</p>
+
+
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>
